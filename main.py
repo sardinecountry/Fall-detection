@@ -61,7 +61,7 @@ class MainWindow(QMainWindow):
         self.timer_video.timeout.connect(self.show_video)
 
     def select_video(self):
-        fileName_choose, filetype = QFileDialog.getOpenFileName(self, "选取文件",
+        fileName_choose, filetype = QFileDialog.getOpenFileName(self, "Select file",
                                                                 os.getcwd(),
                                                                 "Videos(*.avi)")
         if fileName_choose == "":
@@ -193,7 +193,7 @@ class MainWindow(QMainWindow):
         if not self.timer_camera.isActive():
             flag = self.cap.open(self.CAM_NUM)
             if not flag:
-                msg = QtWidgets.QMessageBox.warning(self, '错误', "请检查相机于电脑是否连接正确", buttons=QtWidgets.QMessageBox.Ok)
+                msg = QtWidgets.QMessageBox.warning(self, 'Error', "Please check if the camera is connected to the computer correctly", buttons=QtWidgets.QMessageBox.Ok)
             else:
                 self.timer_camera.start(100)
 
